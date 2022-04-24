@@ -18,6 +18,7 @@ app.set('views', 'views');
 
 //Объявляем папку public публичной, чтоб подключение файла стилей работало через /index.css без указания папки
 app.use(express.static('public'));
+app.use(express.urlencoded({extended: true}));
 app.use('/', homeRoutes);
 app.use('/courses', homeCourses);
 app.use('/add', homeAdd);
